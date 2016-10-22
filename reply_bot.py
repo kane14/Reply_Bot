@@ -24,7 +24,7 @@ class Listener(tweepy.StreamListener):
         print(status.text)
 	print(str(status.in_reply_to_screen_name))
 	print(str(status.user.screen_name))
-	if str(status.in_reply_to_screen_name)=="{TWITTER_ID}" and str(status.user.screen_name)=="momenteye":
+	if str(status.in_reply_to_screen_name)=="{TWITTER_ID}" and str(status.user.screen_name)=="":
 		tweet = "@" + str(status.user.screen_name) + " " + "Yeah!\n" \
 			+ str(datetime.datetime.today())
 		api.update_status(status=tweet)
