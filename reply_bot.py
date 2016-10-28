@@ -2,7 +2,6 @@
 # -*- coding:utf-8 -*-
 
 import tweepy
-from datetime import timedelta
 import datetime
 
 CK="XXXXXXXXXXXXXXXXXXXXXXXX"
@@ -18,7 +17,7 @@ api = tweepy.API(auth)
 
 class Listener(tweepy.StreamListener):
     def on_status(self, status):
-        status.created_at += timedelta(hours=9)#世界標準時から日本時間に
+        status.created_at += datetime.timedelta(hours=9)#世界標準時から日本時間に
 
 	# リプライが来たら返信
         print(status.text)
